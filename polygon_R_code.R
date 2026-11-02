@@ -139,7 +139,7 @@ combined_df <- rbind(
 multipolygon_sf <- st_sfc(st_multipolygon(list(list(as.matrix(combined_df)))), crs = 31983)
 
 shapefile_fi <- read_sf('/home/marcelo/Downloads/shapefile_full_info.shp')
-register_google(key = 'AIzaSyAIj92FSAapbppBXT_2_-7Liby6dOep1kY')
+register_google(key = Sys.getenv("GOOGLE_MAPS_KEY"))
 
 sf_object <- st_sf(geometry = st_sfc(multipolygon_sf), crs = 31983)
 
